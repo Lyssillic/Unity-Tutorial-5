@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public bool isGameActive;
     public Button restartButton;
     public GameObject titleScreen;
+    public GameObject scoreTextObj;
 
     private float spawnRate = 1.0f;
     private int score;
@@ -38,6 +39,7 @@ public class GameManager : MonoBehaviour
         restartButton.gameObject.SetActive(true);
         isGameActive = false;
         gameOverText.gameObject.SetActive(true);
+        scoreTextObj.gameObject.SetActive(false);
     }
 
     public void RestartGame()
@@ -53,5 +55,6 @@ public class GameManager : MonoBehaviour
         StartCoroutine(SpawnTarget());
         UpdateScore(0);
         titleScreen.gameObject.SetActive(false);
+        scoreTextObj.gameObject.SetActive(true);
     }
 }
